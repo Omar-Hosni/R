@@ -33,5 +33,7 @@ str(filedata)
 
 #csv
 filedata2 <- read.csv("C:/Program Files/R/Data/data.csv", header=TRUE)
+View(filedata2)
+
 
 
