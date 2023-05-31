@@ -15,7 +15,7 @@ search()
 require("LiblineaR")
 
 #to unload a package
-detach("package:LiblineaR", unload=true)
+detach("package:LiblineaR", unload=TRUE)
 
 #uninstall the packages
 remove.packages("LiblineaR")
