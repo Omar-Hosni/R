@@ -5,4 +5,8 @@ summary(simple_model)
 plot(df$room_num, df$price)
 abline(simple_model)
 
+#multiple linear regression
+multiple_model <- lm(price~., data=df)
+summary(multiple_model)
+
 
