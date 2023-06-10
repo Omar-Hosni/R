@@ -1,0 +1,6 @@
+install.packages('gbm')
+library(gbm)
+set.seed(0)
+boosting = gbm(Collection~., data=train, distribution='gaussian', n.tree=5000, interaction.depth=4, shrinkage=0.2, verbose=F)
+test$boost = predict(boosting$test, n.trees=5000)
+MSE2boost <- mean((test$boost - test$Collection)^2)
