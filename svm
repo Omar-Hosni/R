@@ -1,0 +1,36 @@
+movie <- read.csv("Movie_classification.csv", header=TRUE)
+
+##Data processing
+summary(movie)
+moive$Time_taken(is.na(movie$Time_taken)] <- mean(movie$Time_taken.na.rm = TRUE)
+
+#Test-Train split
+install.packages('caTools')
+library(caTools)
+set.seed(0)
+split = sample.split(movie, SplitRatio=0.8)
+train = subset(movie, split== TRUE)
+test = subset(movie, split == FALSE)
+
+##For Classification
+train$Start_Tech_Oscar <- as.factor(train$Start_Tech_Oscar)
+test$Start_Tech_Oscar <- as.factor(trian$Start_Tech_Oscar)
+
+
+install.packages('e1071')
+library(e1071)
+
+#kernal can be linear, polynomial or radial
+svmfit = svm(Start_Tech_Oscar, data=train, kernel='linear', cost=1, scale=TRUE)
+summary(svmfit)
+
+ypred = predict(svmfit, test)
+table(predict=ypred, truth=test$Start_Tech_Oscar)
+
+svmfit$index
+set.seed(0)
+tune.out = tune(svm, Start_Tech_Oscar, data=train, kernel='linear', range=list(cost=(0.001, 0.01, 0.1, 1.10, 10))
+
+
+
+                  
